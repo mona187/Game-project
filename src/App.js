@@ -1,9 +1,9 @@
 import "./App.css";
-
+import images from "./images";
 import React, { useState } from "react";
 import Home from "./Components/Home";
 // import Drawing from "./Components/Drawing";
-import Figure from "./Components/Figure";
+
 // import { GlobalStyle, ThemeButton } from "./styles";
 import { ThemeProvider } from "styled-components";
 const randomNumber = () => {
@@ -24,7 +24,7 @@ function App() {
   const [attempts, setAttempts] = useState(6);
   const [answer, setAnswer] = useState(randomNumber());
   const [results, setResults] = useState("");
-
+  const [drawing, setDrawing] = useState("");
   // const [currentTheme, setTheme] = useState(theme.light);
   console.log(answer);
   const handleReset = () => {
@@ -57,11 +57,10 @@ function App() {
           <button onClick={handleReset}>reset</button>
         </div>
       );
+      if (attempts === 6) {
+        setDrawing(images[0].image);
+      }
       console.log(answer);
-      //   const drawingprops.attempt
-      // .map((attempts)) => {
-      //   attempts=4;
-      //   <circle cx="140" cy="70" r="20" className="figure-part" />;
     }
   };
   // const toggleTheme = () => {
@@ -75,12 +74,16 @@ function App() {
         <GlobalStyle /> */}
       {/* <div> */}
       <Home attempts={attempts} />
+      <img src={drawing} />
       {/* <ThemeButton onClick={toggleTheme}>{themeButtonText}</ThemeButton>
         </div> */}
+
       <input type="number" onChange={(event) => setValue(event.target.value)} />
+
       <button type="submit" onClick={handleClick}>
         GUESS
       </button>
+
       {results}
       {/* </ThemeProvider> */}
 
@@ -88,4 +91,5 @@ function App() {
     </div>
   );
 }
+
 export default App;

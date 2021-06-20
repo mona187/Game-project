@@ -9,18 +9,7 @@ export const Image = styled.img`
   margin-left: auto;
   margin-right: auto;
 `;
-// export const Body = styled.body`
-// #root {
-//   background-color: #34495e;
-//   color: #fff;
-//   font-family: Arial, Helvetica, sans-serif;
-//   display: flex;
-//   flex-direction: column;
-//   align-items: center;
-//   height: 80vh;
-//   margin: 0;
-//   overflow: hidden;
-//   `}
+
 // export const GlobalStyle = createGlobalStylebody`
 //     color: ${(props) => props.theme.mainColor};
 //     background-color: ${(props) => props.theme.backgroundColor};`;
